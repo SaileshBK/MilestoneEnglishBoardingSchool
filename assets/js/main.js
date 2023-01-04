@@ -70,4 +70,24 @@ let swiper = new Swiper(".gallery__container", {
 sr.reveal('.home__data, .vision__img, .skills__subtitle, .skills__text', {});
 sr.reveal('.home__img, .vision__subtitle, .vision__text, .skills__img', { delay: 400 });
 sr.reveal('.home__social-icon', { interval: 200 });
-sr.reveal('.skills__data, .work__img, .contact__input', { interval: 200 }); 
+sr.reveal('.skills__data, .work__img, .contact__input', { interval: 200 });
+
+/*===== Conrtact form =====*/
+const form = document.getElementById('contact-form');
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    if (firstName == '' | lastName == '' | email == '' | message == '') {
+        alert('Please fill all the fields');
+        return;
+    }
+
+    alert('sent');
+
+
+});
